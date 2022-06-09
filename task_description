@@ -1,0 +1,21 @@
+Treść zadania
+
+Zdefiniuj następujące zapytania:
+
+    Tworzy tabelę pracownik(imie, nazwisko, wyplata, data urodzenia, stanowisko). W tabeli mogą być dodatkowe kolumny, które uznasz za niezbędne.
+    Wstawia do tabeli co najmniej 6 pracowników
+    Pobiera wszystkich pracowników i wyświetla ich w kolejności alfabetycznej po nazwisku
+    Pobiera pracowników na wybranym stanowisku
+    Pobiera pracowników, którzy mają co najmniej 30 lat
+    Zwiększa wypłatę pracowników na wybranym stanowisku o 10%
+    Pobiera najmłodszego pracowników (uwzględnij przypadek, że może być kilku urodzonych tego samego dnia)
+    Usuwa tabelę pracownik
+    Tworzy tabelę stanowisko (nazwa stanowiska, opis, wypłata na danym stanowisku)
+    Tworzy tabelę adres (ulica+numer domu/mieszkania, kod pocztowy, miejscowość)
+    Tworzy tabelę pracownik (imię, nazwisko) + relacje do tabeli stanowisko i adres
+    Dodaje dane testowe (w taki sposób, aby powstały pomiędzy nimi sensowne powiązania)
+    Pobiera pełne informacje o pracowniku (imię, nazwisko, adres, stanowisko)
+    Oblicza sumę wypłat dla wszystkich pracowników w firmie
+    Pobiera pracowników mieszkających w lokalizacji z kodem pocztowym 90210 (albo innym, który będzie miał sens dla Twoich danych testowych)
+
+Rozwiązanie umieść na githubie w postaci pliku .sql zawierającego wszystkie zapytania. Do sprawdzenia podeślij w postaci Pull Request (możesz np stworzyć dodatkowy, branch bez tego pliku)
