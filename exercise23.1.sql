@@ -8,7 +8,7 @@ CREATE TABLE pracownik (
 	nazwisko VARCHAR(30) NOT NULL,
     wynagrodzenie DOUBLE(9,2),
     data_urodzenia DATE,
-    stanowisko VARCHAR(20)
+    stanowisko VARCHAR(30)
 );
 
 INSERT INTO pracownik
@@ -50,9 +50,9 @@ VALUES
 	('konstruktor', 'inżynier z działu konstrukcyjnego (na ogół 1-4 lata doświadczenia)', 6000),
 	('starszy konstruktor', 'inżynier z działu konstrukcyjnego będący samodzielnym pracownikiem (na ogół od 3-5 lat doświadczenia)', 10000),
 	('główny konstruktor', 'inżyniew z działu konstrukcyjnego wyróżniający się wiedzą i bogactwem doświadczenia, pełni rolę mentorską', 14000),
-	('członek rady konstruktorskiej', 'prowadzi nadzór nad pracami konstrukcyjnymi, pełni rolę mentorską, wszystkie zmiany konstrukcyjne oraz nowe projekty muszą zostać zatwierdzone przez członków rady konstrukcyjnej', 17500);
+	('członek rady konstruktorskiej', 'prowadzi nadzór nad pracami konstrukcyjnymi, pełni rolę mentorską, wszystkie zmiany konstrukcyjne oraz nowe projekty muszą zostać zatwierdzone przez członków rady konstruktorskiej', 17500);
 
-SELECT * FROM stanowisko;
+-- SELECT * FROM stanowisko;
 
 CREATE TABLE adres(
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -71,9 +71,12 @@ VALUES
     ('21', 'Zwady', '05300'),
     ('Ignacka 60/12', 'Ogólniki', '05232'),
     ('Pagórek 1', 'Ogólniki', '05232'),
-    ('Zielona', 'Ogólniki', '05232');
+    ('Zielona 12', 'Ogólniki', '05232'),
+    ('Konwaliowa 4', 'Ogólniki', '05232'),
+    ('Galaktyki 5', 'Zdrój', '05225'),
+    ('Okrętu 43/4', 'Leleszki', '05333');
     
-SELECT * FROM adres;
+-- SELECT * FROM adres;
 
 CREATE TABLE pracownik(
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -92,23 +95,25 @@ VALUES
 	('Andrzej', 'Kaczmarek', 2, 2),
 	('Monika', 'Biełczyk', 3, 3),
 	('Aldona', 'Nieszporek', 4, 4),
-	('Rafał', 'Witczak', 5, 5),
+	('Rafał', 'Witczak', 5, 4),
 	('Aleksandra', 'Jasnowska', 6, 6),
 	('Wiktor', 'Urbański', 7, 2),
-    ('Arnold', 'Zielony', 8, 3);
+    ('Arnold', 'Zielony', 8, 3),
+    ('ALicja', 'Jagiełło', 9, 3),
+    ('Jędrzej', 'Morwa', 10, 3),
+    ('Agnieszka', 'Górna', 11, 5),
+    ('Krystian', 'Górny',11, 6);
     
 SELECT imie, nazwisko, ulica_i_nr_domu, miasto, kod_pocztowy, nazwa_stanowiska, wynagrodzenie_bazowe FROM pracownik p
 JOIN adres a ON p.adres_id = a.id
 JOIN stanowisko s ON p.stanowisko_id = s.id;
 
 SELECT SUM(wynagrodzenie_bazowe) FROM pracownik p
-JOIN adres a ON p.adres_id = a.id
 JOIN stanowisko s ON p.stanowisko_id = s.id;
 
-SELECT imie, nazwisko, ulica_i_nr_domu, miasto, kod_pocztowy, nazwa_stanowiska, wynagrodzenie_bazowe FROM pracownik p
+SELECT imie, nazwisko, ulica_i_nr_domu, miasto, kod_pocztowy FROM pracownik p
 JOIN adres a ON p.adres_id = a.id
-JOIN stanowisko s ON p.stanowisko_id = s.id
 WHERE kod_pocztowy = '05232';
 
-DROP SCHEMA firma;
+ -- DROP SCHEMA firma;
 
